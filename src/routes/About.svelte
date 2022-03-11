@@ -3,6 +3,7 @@
   import handleVisibilityChange from "../web apis/screen-wake";
   import { startDetect, stopDetect } from "../web apis/idle-detection";
   import accessWebCamp from "../web apis/web-capm-api";
+  import { accelerometerSensore } from "../web apis/sensors";
 
   const onPressHandler = () => {
     count.update((val) => {
@@ -35,4 +36,5 @@
   <video controls width="250" id="video" />
 
   <button on:click={webcampVideo}> webcamp</button>
+  <button on:click={accelerometerSensore}> accelerometer sensore</button>
 </div>
