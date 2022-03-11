@@ -1,5 +1,5 @@
 <script>
-  import { Router, Link, Route } from "svelte-navigator";
+  import { Router, link, Route } from "svelte-navigator";
   // @ts-ignore
   import Home from "./routes/Home.svelte";
   // @ts-ignore
@@ -10,9 +10,12 @@
 
 <Router>
   <nav>
-    <Link to="/">Home</Link>
-    <Link to="about">About</Link>
-    <Link to="blog">Blog</Link>
+    <!-- <Link class=".link" to="/">Home</Link> -->
+    <a class="nav__link" href="/" use:link>Home</a>
+    <a class="nav__link" href="/about" use:link>About</a>
+
+    <!-- <Link class=".link" to="about">About</Link>
+    <Link class=".link" to="blog">Blog</Link> -->
   </nav>
 
   <Route path="/">
@@ -23,7 +26,7 @@
   </Route>
 </Router>
 
-<style>
+<style lang="scss">
   :root {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -33,5 +36,15 @@
   }
   nav {
     margin-bottom: 20px;
+  }
+  .nav__link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0px 10px;
+    color: blue;
+    font-weight: 500;
+    &:hover {
+      color: red;
+    }
   }
 </style>
